@@ -1,0 +1,9 @@
+.carousel-item {
+    max-height: 39rem;
+    min-height: 39rem;
+}
+
+.carousel-img {
+    margin-left: auto;
+    margin-right: auto;
+}
