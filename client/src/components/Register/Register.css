@@ -1,0 +1,12 @@
+div.register-div {
+    padding-top: 1rem;
+    display: block;
+    text-align: center;
+}
+
+Form.register-form {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
