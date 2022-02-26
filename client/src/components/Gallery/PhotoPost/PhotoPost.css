@@ -1,0 +1,62 @@
+div.post {
+    background-color: rgba(255, 255, 255, 0.774);
+    padding: 30px;
+    box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 2%;
+    margin: 30px auto;
+    max-width: 1400px;
+    min-width: 600px;
+}
+
+div.post h3 {
+    color: black;
+    font-size: 60px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
+div.creator {
+    margin-top: 20px;
+    display: flex;
+}
+
+div.creator img {
+    margin-left: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+div.creator p {
+    margin-top: 8px;
+    margin-bottom: 0px;
+    margin-left: 10px;
+    font-size: 25px;
+    font-style: normal;
+    color: black;
+}
+
+div.photo {
+    margin-top: 10px;
+    width: 100%;
+    height: auto;
+}
+
+div.photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5%;
+}
+
+div.post a {
+    float: right;
+    background-color: #3ea9b194;
+    border: 1px solid rgba(255, 255, 255, 0.699);
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 12px;
+}
