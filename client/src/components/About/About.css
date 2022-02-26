@@ -1,0 +1,51 @@
+div.aboutBlog,
+div.aboutUs {
+    margin-top: 150px;
+    margin-left: 10px;
+    height: 82%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+}
+
+div.aboutBlog {
+    left: 0;
+}
+
+div.aboutUs {
+    right: 0;
+}
+
+.centerInfo {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.centerInfo img {
+    width: 150px;
+    border-radius: 50%;
+}
+
+div.aboutBlog h1#about-blog-header,
+div.aboutUs h1#about-us-header {
+    text-align: center;
+    font-size: 50px;
+    font-style: italic;
+}
+
+div.centerInfo h2 {
+    font-size: 35px;
+    text-align: center;
+    margin: 20px 0px;
+}
+
+div.centerInfo p {
+    font-size: 30px;
+    margin-bottom: -10px;
+    margin-top: 30px;
+}
