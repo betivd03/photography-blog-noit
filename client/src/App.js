@@ -11,6 +11,7 @@ import Gallery from "./components/Gallery";
 import About from "./components/About";
 import Login from './components/Login';
 import Register from "./components/Register";
+import Logout from "./components/Logout";
 import AddPhoto from "./components/AddPhoto";
 import EditPhoto from "./components/EditPhoto";
 import PhotoDetails from "./components/PhotoDetails";
@@ -50,6 +51,7 @@ function App() {
                         <Route path="/about" element={<About />} />
                         <Route path="/login" element={<Login />} />
                         <Route path="/register" element={<Register />} />
+                        <Route path="/logout" element={<Logout />} />
                         <Route path="/add" element={<AddPhoto />} />
                         <Route path="/edit" element={<EditPhoto />} />
                         <Route path="/details" element={<PhotoDetails />} />

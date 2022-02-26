@@ -28,6 +28,7 @@ const Header = () => {
                         <Nav.Link className="nav-link" to="/about" as={Link}>About</Nav.Link>
                         <Nav.Link className="nav-link" to="/login" as={Link}>Login</Nav.Link>
                         <Nav.Link className="nav-link" to="/register" as={Link}>Register</Nav.Link>
+                        <Nav.Link className="nav-link" to="/logout" as={Link}>Logout</Nav.Link>
                         <Nav.Link className="nav-link" to="/add" as={Link}>Add Photo</Nav.Link>
                         <Nav.Link className="nav-link" to="/edit" as={Link}>Edit Photo</Nav.Link>
                         <Nav.Link className="nav-link" to="/details" as={Link}>Photo Details</Nav.Link>
