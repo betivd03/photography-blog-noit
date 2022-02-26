@@ -1,18 +1,18 @@
 div.details {
     display: flex;
-    margin-left: 100px;
-    margin-right: 100px;
-    width: 1300px;
+    margin: 50px auto;
+    max-width: 1400px;
+    min-width: 600px;
     background-color: rgba(255, 255, 255, 0.774);
     padding: 30px;
     box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
     border-radius: 2%;
     margin-bottom: 100px;
+    align-items: center;
 }
 
 div.photo-details {
     left: 0;
-    width: 650px;
     height: auto;
 }
 
@@ -37,13 +37,18 @@ div.photo-details li span {
 
 div.buttons {
     display: flex;
+    width: 60%;
+    flex-wrap: wrap;
+    align-content:center;
+    justify-content: space-around;
+    gap: 10px;
+    margin-top: 50px;
 }
 
 div.owner,
 div.user,
 div.likes {
     display: flex;
-    margin-top: 100px;
 }
 
 div.owner a,
