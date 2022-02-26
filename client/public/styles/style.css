@@ -30,3 +30,40 @@ footer {
     color: white;
     font-size: 20px;
 }
+
+div.root h1#error-page-header {
+    text-align: center;
+    font-style: italic;
+    padding-top: 20px;
+    font-size: 70px;
+    margin-top: 0px;
+}
+
+div.root p {
+    text-align: center;
+    font-style: italic;
+    margin-top: 20px;
+    font-size: 40px;
+}
+
+.error-div {
+    position: fixed;
+    right: 10px;
+    display: block;
+    text-align: center;
+    font-style: italic;
+    height: auto;
+    width: 450px;
+    padding: 10px;
+}
+
+.error-div p {
+    background: #ff183b;
+    font-size: 20px;
+    padding: 20px;
+    height: auto;
+}
+
+div.hidden {
+    display: none;
+}
