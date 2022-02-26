@@ -4,3 +4,16 @@
     margin-right: 0.3rem;
     color: #DB6595
 }
+
+.navbar-container {
+    width: 100%;
+    display: flex;
+}
+
+.navigation {
+   margin-left: auto;
+}
+
+img.blog-logo {
+    margin-left: 20px;
+}
