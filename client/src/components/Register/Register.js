@@ -55,22 +55,22 @@ const Register = () => {
             <Form className="w-50 register-form" method="POST" onSubmit={onRegisterSubmitHandler}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label className="label-style">Username</Form.Label>
-                    <Form.Control type="username" id="username" name="username" placeholder="Enter username" />
+                    <Form.Control type="username" name="username" placeholder="Enter username" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label className="label-style">Email address</Form.Label>
-                    <Form.Control type="email" id="email" name="email" placeholder="Enter email" />
+                    <Form.Control type="email" name="email" placeholder="Enter email" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label className="label-style">Password</Form.Label>
-                    <Form.Control type="password" id="password" name="password" placeholder="Password" />
+                    <Form.Control type="password" name="password" placeholder="Password" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label className="label-style">Repeat Password</Form.Label>
-                    <Form.Control type="password" id="rePassword" name="rePassword" placeholder="Repeat password" />
+                    <Form.Control type="password" name="rePassword" placeholder="Repeat password" />
                 </Form.Group>
                 
                 <Button variant="outline-light" type="submit">

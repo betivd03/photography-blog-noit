@@ -50,12 +50,12 @@ const Login = () => {
             <Form className="w-50 login-form" method='POST' onSubmit={onLoginSubmitHandler}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label className="label-style">Email address</Form.Label>
-                    <Form.Control type="email"  id="email" name="email" placeholder="Enter email" />
+                    <Form.Control type="email" name="email" placeholder="Enter email" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label className="label-style">Password</Form.Label>
-                    <Form.Control type="password" id="password" name="password" placeholder="Password" />
+                    <Form.Control type="password" name="password" placeholder="Password" />
                 </Form.Group>
                 
                 <Button variant="outline-light" type="submit">
