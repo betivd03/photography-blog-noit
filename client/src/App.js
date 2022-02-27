@@ -15,7 +15,9 @@ import Logout from "./components/Logout";
 import AddPhoto from "./components/AddPhoto";
 import EditPhoto from "./components/EditPhoto";
 import PhotoDetails from "./components/PhotoDetails";
+import MyProfile from "./components/MyProfile";
 import ErrorPage from "./components/ErrorPage";
+import AuthRouteGuard from "./guards/AuthRouteGuard.js";
 
 const initialAuth = {
     email: "",
@@ -52,9 +54,12 @@ function App() {
                         <Route path="/login" element={<Login />} />
                         <Route path="/register" element={<Register />} />
                         <Route path="/logout" element={<Logout />} />
-                        <Route path="/add" element={<AddPhoto />} />
-                        <Route path="/edit" element={<EditPhoto />} />
-                        <Route path="/details" element={<PhotoDetails />} />
+                        <Route element={<AuthRouteGuard />}>
+                            <Route path="/add" element={<AddPhoto />} />
+                            <Route path="/details/:photoId/edit" element={<EditPhoto />} />
+                            <Route path="/my-profile" element={<MyProfile />} />
+                        </Route>
+                        <Route path="/details/:photoId" element={<PhotoDetails />} />
                         <Route path="/error" element={<ErrorPage />} />
                     </Routes>
                 </main>
