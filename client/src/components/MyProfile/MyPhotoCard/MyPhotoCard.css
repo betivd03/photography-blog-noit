@@ -1,0 +1,40 @@
+div.my-photo-card {
+    background-color: rgba(255, 255, 255, 0.322);
+    flex-basis: 29.3%;
+    padding: 30px;
+    width: 30%;
+    height: 350px;
+    box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 5%;
+}
+
+div.my-photo-card img {
+    border-radius: 10%;
+    height: 100%;
+    width: 60%;
+    padding: 5px;
+}
+
+div.my-photo-card h3 {
+    margin: 0%;
+    text-align: center;
+    font-style: italic;
+    font-size: 30px;
+}
+
+div.my-photo-card a {
+    float: right;
+    background-color: #3ea9b194;
+    border: 1px solid rgba(255, 255, 255, 0.548);
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 4px 2px;
+    border-radius: 12px;
+}
+
+div.image {
+    text-align: center;
+}

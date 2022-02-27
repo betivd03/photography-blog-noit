@@ -1,0 +1,32 @@
+div.profile-info {
+    display: flex;
+    margin-left: 500px;
+}
+
+div.profile-photo {
+    margin: 20px;
+}
+
+div.profile-photo img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+div.user-info {
+    margin-top: 80px;
+}
+
+div.user-info p {
+    font-size: 50px;
+}
+
+div.my-photos {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap
+}
+
+div.info {
+    display: flex;
+}
