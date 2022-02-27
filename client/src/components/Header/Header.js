@@ -1,9 +1,30 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Nav, Navbar, Container } from 'react-bootstrap';
 import "./Header.css";
 
+import { AuthContext } from "../../contexts/AuthContext.js";
+
 const Header = () => {
 
+    const { user } = useContext(AuthContext);
+
+    let userNav = (
+        <>
+            <Nav.Link className="nav-link" to="/logout" as={Link}>Logout</Nav.Link>
+            <Nav.Link className="nav-link" to="/add" as={Link}>Add Photo</Nav.Link>
+            <Nav.Link className="nav-link" to="/my-profile" as={Link}>My Profile</Nav.Link>
+            <Nav.Link className="nav-link" href="#" disabled>Welcome, {user.username}</Nav.Link>
+        </>
+    );
+
+    let guestNav = (
+        <>
+            <Nav.Link className="nav-link" to="/login" as={Link}>Login</Nav.Link>
+            <Nav.Link className="nav-link" to="/register" as={Link}>Register</Nav.Link>
+        </>
+    );
+    
     return (
         <Navbar className="navbar" expand="lg">
             <Container fluid className="navbar-container">
@@ -26,13 +47,9 @@ const Header = () => {
                         <Nav.Link className="nav-link" to="/" as={Link}>Home</Nav.Link>
                         <Nav.Link className="nav-link" to="/gallery" as={Link}>Gallery</Nav.Link>
                         <Nav.Link className="nav-link" to="/about" as={Link}>About</Nav.Link>
-                        <Nav.Link className="nav-link" to="/login" as={Link}>Login</Nav.Link>
-                        <Nav.Link className="nav-link" to="/register" as={Link}>Register</Nav.Link>
-                        <Nav.Link className="nav-link" to="/logout" as={Link}>Logout</Nav.Link>
-                        <Nav.Link className="nav-link" to="/add" as={Link}>Add Photo</Nav.Link>
-                        <Nav.Link className="nav-link" to="/edit" as={Link}>Edit Photo</Nav.Link>
-                        <Nav.Link className="nav-link" to="/details" as={Link}>Photo Details</Nav.Link>
-                        <Nav.Link className="nav-link" href="#" disabled>Welcome, user</Nav.Link>
+                        {user.username
+                            ? userNav
+                            : guestNav}                        
                     </Nav>
                 </Navbar.Collapse>
             </Container>
