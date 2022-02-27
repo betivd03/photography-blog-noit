@@ -1,54 +1,35 @@
 import { Carousel } from 'react-bootstrap';
 import "./Home.css";
 
+import { useState, useEffect } from "react";
+
+import CarouselItem from "./CarouselItem.js";
+
+import * as photosService from "../../services/photosService.js";
+
 const Home = () => {
+
+    const [photos, setPhotos] = useState([]);
+
+    useEffect(() => {
+        photosService.getLatest()
+            .then(result => setPhotos(result));
+    }, []);
 
     return (
         <Carousel fade className="carousel h-100">
-            <Carousel.Item className="carousel-item">
-                <div className="img-container">
-                    <img
-                        className="d-block carousel-img"
-                        src="/images/photography-blog-logo.jpg"
-                        alt="First slide"
-                    />
-                    <div className="overlay"></div>
-                </div>
-                <Carousel.Caption>
-                    <h3>First slide label</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </Carousel.Caption>
-            </Carousel.Item>
-
-            <Carousel.Item className="w-100 carousel-item">
-                <div className="img-container">
-                    <img
-                        className="d-block carousel-img"
-                        src="/images/ocean.jpg"
-                        alt="Second slide"
-                    />
-                    <div className="overlay"></div>
-                </div>
-                <Carousel.Caption>
-                    <h3>Second slide label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </Carousel.Caption>
-            </Carousel.Item>
-
-            <Carousel.Item className="w-100 carousel-item">
-                <div className="img-container">
-                    <img
-                        className="d-block carousel-img"
-                        src="/images/ocean-photography.jpg"
-                        alt="Third slide"
-                    />
-                    <div className="overlay"></div>
-                </div>
-                <Carousel.Caption>
-                    <h3>Third slide label</h3>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                </Carousel.Caption>
-            </Carousel.Item>
+            
+        {photos.length > 0
+            ? (
+                <>
+                    {photos.map(x => <CarouselItem key={x._id} photo={x} />)}
+                </>
+            )
+            : (
+                <p>No Photos Yet!</p>
+            )
+        }
+            
         </Carousel>
     );
 };
