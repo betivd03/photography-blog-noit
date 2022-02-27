@@ -19,6 +19,8 @@ const AddPhoto = () => {
 
     const [error, setError] = useState([]);
 
+    const [image, setImage] = useState([]);
+
     useEffect(() => {
         photosService.getOne(photoId)
             .then(res => {
@@ -44,15 +46,28 @@ const AddPhoto = () => {
             return setError('Location must be at least 3 characters long!');
         }
 
-        photosService.edit({
-            title,
-            category,
-            description,
-            location
-        }, photoId, user.accessToken)
-            .then(() => {
-                navigate(`/details/${photoId}`);
-            });
+        formData.append("file", image);
+        formData.append("upload_preset", "photography-blog");
+        formData.append("cloud_name", "betimb");
+
+        fetch("https://api.cloudinary.com/v1_1/betimb/image/upload", {
+            method: "PUT",
+            body: formData
+        })
+        .then(res => res.json())
+        .then(data => {
+            photosService.edit({
+                title,
+                category,
+                description,
+                location,
+                imageUrl: data.url
+            }, photoId, user.accessToken)
+                .then(() => {
+                    navigate(`/details/${photoId}`);
+                });
+        })
+        .catch(err => console.log(err));
     };
 
     return (
@@ -64,22 +79,22 @@ const AddPhoto = () => {
             <Form className="w-50 edit-photo-form" method="POST" onSubmit={onEditSubmitHandler}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label className="label-style">Title</Form.Label>
-                    <Form.Control type="text" id="title" name="title" placeholder="Enter title" defaultValue={photo.title} />
+                    <Form.Control type="text" name="title" placeholder="Enter title" defaultValue={photo.title} />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label className="label-style">Category</Form.Label>
-                    <Form.Control type="text" id="category" name="category" placeholder="Enter category" defaultValue={photo.category} />
+                    <Form.Control type="text" name="category" placeholder="Enter category" defaultValue={photo.category} />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label className="label-style">Description</Form.Label>
-                    <Form.Control type="text" id="description" name="description" placeholder="Enter description" defaultValue={photo.description} />
+                    <Form.Control type="text" name="description" placeholder="Enter description" defaultValue={photo.description} />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label className="label-style">Location</Form.Label>
-                    <Form.Control type="text" id="location" name="location" placeholder="Enter location" defaultValue={photo.location} />
+                    <Form.Control type="text" name="location" placeholder="Enter location" defaultValue={photo.location} />
                 </Form.Group>
 
                 <Form.Group className="position-relative mb-3">
@@ -88,6 +103,7 @@ const AddPhoto = () => {
                         type="file"
                         required
                         name="file"
+                        onChange={(e) => setImage(e.target.files[0])}
                     />
                     <Form.Control.Feedback type="invalid" tooltip>
                         {}

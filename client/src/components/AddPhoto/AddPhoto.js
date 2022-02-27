@@ -15,11 +15,13 @@ const AddPhoto = () => {
 
     const [error, setError] = useState([]);
 
+    const [image, setImage] = useState([]);
+    
     const onAddSubmitHandler = (e) => {
         e.preventDefault();
 
         let formData = new FormData(e.currentTarget);
-        let { title, category, description, location, imageUrl } = Object.fromEntries(formData);
+        let { title, category, description, location } = Object.fromEntries(formData);
         
         if (title === '' || category === '' || description === '' || location === '') {
             return setError('All fields are required!');
@@ -33,21 +35,28 @@ const AddPhoto = () => {
             return setError('Location must be at least 3 characters long!');
         }
 
-        console.log(user.token);
-        console.log(title);
-        console.log(category);
-        console.log(description);
-        console.log(location);
+        formData.append("file", image);
+        formData.append("upload_preset", "photography-blog");
+        formData.append("cloud_name", "betimb");
 
-        photosService.create({
-            title,
-            category,
-            description,
-            location
-        }, user.token, user._id)
-            .then(() => {
-                navigate('/');
-            });
+        fetch("https://api.cloudinary.com/v1_1/betimb/image/upload", {
+            method: "POST",
+            body: formData
+        })
+        .then(res => res.json())
+        .then(data => {
+            photosService.create({
+                title,
+                category,
+                description,
+                location,
+                imageUrl: data.url
+            }, user.token, user._id)
+                .then(() => {
+                    navigate('/');
+                });
+        })
+        .catch(err => console.log(err));
     };
 
     return (
@@ -59,22 +68,22 @@ const AddPhoto = () => {
             <Form className="w-50 add-photo-form" method="POST" onSubmit={onAddSubmitHandler}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label className="label-style">Title</Form.Label>
-                    <Form.Control type="text" id="title" name="title" placeholder="Enter title" />
+                    <Form.Control type="text" name="title" placeholder="Enter title" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label className="label-style">Category</Form.Label>
-                    <Form.Control type="text" id="category" name="category" placeholder="Enter category" />
+                    <Form.Control type="text" name="category" placeholder="Enter category" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label className="label-style">Description</Form.Label>
-                    <Form.Control type="text" id="description" name="description" placeholder="Enter description" />
+                    <Form.Control type="text" name="description" placeholder="Enter description" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label className="label-style">Location</Form.Label>
-                    <Form.Control type="text" id="location" name="location" placeholder="Enter location" />
+                    <Form.Control type="text" name="location" placeholder="Enter location" />
                 </Form.Group>
 
                 <Form.Group className="position-relative mb-3">
@@ -83,6 +92,7 @@ const AddPhoto = () => {
                         type="file"
                         required
                         name="file"
+                        onChange={(e) => setImage(e.target.files[0])}
                     />
                     <Form.Control.Feedback type="invalid" tooltip>
                         {}
