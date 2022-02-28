@@ -1,6 +1,6 @@
 div.profile-info {
     display: flex;
-    margin-left: 500px;
+    margin: 20px auto;
 }
 
 div.profile-photo {
@@ -22,7 +22,10 @@ div.user-info p {
 }
 
 div.my-photos {
-    margin: auto;
+    margin: 10px 30px;
+    padding: auto 50px;
+    min-width: 600px;
+    max-width: 1500px;
     display: flex;
     flex-wrap: wrap
 }

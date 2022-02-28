@@ -1,9 +1,11 @@
 div.my-photo-card {
     background-color: rgba(255, 255, 255, 0.322);
     flex-basis: 29.3%;
-    padding: 30px;
-    width: 30%;
-    height: 350px;
+    padding: 20px;
+    margin: auto 20px;
+    width: 33%;
+    min-width: 300px;
+    height: 500px;
     box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
     border-radius: 5%;
 }
@@ -37,4 +39,9 @@ div.my-photo-card a {
 
 div.image {
     text-align: center;
+}
+
+.button-details {
+    float: right;
+    margin-bottom: 0;
 }

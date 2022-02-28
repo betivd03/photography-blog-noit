@@ -15,7 +15,6 @@ const MyProfile = () => {
     useEffect(() => {
         photosService.getMy(user._id)
             .then(result => {
-                console.log(user._id);
                 setMyPhotos(result);
             })
     }, []);

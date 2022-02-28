@@ -11,7 +11,7 @@ const MyPhotoCard = ({
             <div className="image">
                 <img src={photo.imageUrl} alt={photo.title} />
             </div>
-            <Link to={`/details/${photo._id}`}>Details</Link>
+            <Link to={`/details/${photo._id}`} className="button-details">Details</Link>
         </div>
     );
 };
