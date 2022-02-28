@@ -2,7 +2,7 @@ div.details {
     display: flex;
     margin: 50px auto;
     max-width: 1400px;
-    min-width: 1000px;
+    min-width: 300px;
     background-color: rgba(255, 255, 255, 0.774);
     padding: 30px;
     box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);

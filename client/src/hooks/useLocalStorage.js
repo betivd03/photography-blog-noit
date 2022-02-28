@@ -9,7 +9,6 @@ const useLocalStorage = (key, initialValue) => {
                 ? JSON.parse(item) 
                 : initialValue;
         } catch(err) {
-            console.log(err);
             return initialValue;
         }
     });
@@ -21,7 +20,7 @@ const useLocalStorage = (key, initialValue) => {
 
             setState(value);
         } catch(err) {
-            console.log(err);
+            throw err;
         }
     };
 

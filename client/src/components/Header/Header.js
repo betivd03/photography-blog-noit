@@ -11,9 +11,9 @@ const Header = () => {
 
     let userNav = (
         <>
-            <Nav.Link className="nav-link" to="/logout" as={Link}>Logout</Nav.Link>
             <Nav.Link className="nav-link" to="/add" as={Link}>Add Photo</Nav.Link>
             <Nav.Link className="nav-link" to="/my-profile" as={Link}>My Profile</Nav.Link>
+            <Nav.Link className="nav-link" to="/logout" as={Link}>Logout</Nav.Link>
             <Nav.Link className="nav-link" href="#" disabled>Welcome, {user.username}</Nav.Link>
         </>
     );

@@ -67,7 +67,9 @@ const AddPhoto = () => {
                     navigate(`/details/${photoId}`);
                 });
         })
-        .catch(err => console.log(err));
+        .catch(err => {
+            navigate('/error');
+        });
     };
 
     return (
@@ -95,19 +97,6 @@ const AddPhoto = () => {
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label className="label-style">Location</Form.Label>
                     <Form.Control type="text" name="location" placeholder="Enter location" defaultValue={photo.location} />
-                </Form.Group>
-
-                <Form.Group className="position-relative mb-3">
-                    <Form.Label className="label-style">File</Form.Label>
-                    <Form.Control
-                        type="file"
-                        required
-                        name="file"
-                        onChange={(e) => setImage(e.target.files[0])}
-                    />
-                    <Form.Control.Feedback type="invalid" tooltip>
-                        {}
-                    </Form.Control.Feedback>
                 </Form.Group>
                 
                 <Button variant="outline-light" type="submit">

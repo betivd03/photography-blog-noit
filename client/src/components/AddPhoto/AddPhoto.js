@@ -56,7 +56,9 @@ const AddPhoto = () => {
                     navigate('/');
                 });
         })
-        .catch(err => console.log(err));
+        .catch(err => {
+            navigate('/error');
+        });
     };
 
     return (

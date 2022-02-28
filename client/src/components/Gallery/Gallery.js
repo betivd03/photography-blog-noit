@@ -18,7 +18,6 @@ const Gallery = () => {
 
     return (
         <section id="gallery-page">
-            <h1>Our Gallery</h1>
 
             {posts.length > 0 
                 ? (

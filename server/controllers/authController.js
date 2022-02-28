@@ -32,7 +32,6 @@ router.post('/login', async (req, res) => {
 
 router.get('/all', async (req, res) => {
     let users = await authService.getAll();
-    console.log(users);
     res.end();
 });
 
