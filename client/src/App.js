@@ -60,7 +60,7 @@ function App() {
                             <Route path="/my-profile" element={<MyProfile />} />
                         </Route>
                         <Route path="/details/:photoId" element={<PhotoDetails />} />
-                        <Route path="/error" element={<ErrorPage />} />
+                        <Route path="*" element={<ErrorPage />} />
                     </Routes>
                 </main>
                 <footer>All rights reserved &copy;</footer>
