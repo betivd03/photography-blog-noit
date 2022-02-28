@@ -1,0 +1,14 @@
+.error-photo {
+    height: 500px;
+    min-width: 300px;
+    max-width: 900px;
+    margin: 30px auto;
+    align-items: center;
+}
+
+.error-photo img {
+    height: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
