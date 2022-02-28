@@ -7,7 +7,7 @@ exports.register = async (userData) => {
 };
 
 exports.login = async (email, password) => {
-    let user = await User.findOne({ email });
+    let user = await User.findOne({ email, password });
 
     if (!user) {
         // throw new Error('Invalid email or password');

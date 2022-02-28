@@ -9,14 +9,14 @@ const userSchema = new mongoose.Schema({
         unique: true,
         trim: true,
         minlength: 3,
-        validate: /[a-zA-Z0-9]+/
+        validate: /[a-zA-Z0-9._\-]+/
     },
     email: {
         type: String,
         required: true,
         unique: true,
         trim: true,
-        validate: /[a-zA-Z]+@[a-zA-Z]+.[a-zA-Z]+/
+        validate: /[a-zA-Z0-9._\-]+@[a-zA-Z]+.[a-zA-Z]+/
     },
     password: {
         type: String,
@@ -24,7 +24,7 @@ const userSchema = new mongoose.Schema({
         unique: true,
         trim: true,
         minlength: 5,
-        validate: /[a-zA-Z0-9]+/
+        validate: /[a-zA-Z0-9._\-]+/
     }, 
     photos: {
         type: mongoose.Types.ObjectId,
