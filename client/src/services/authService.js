@@ -14,7 +14,7 @@ export const login = async (email, password) => {
     if (response.ok) {
         return result;
     } else {
-        throw result.message;
+        throw "Invalid email or password";
     }
 };
 
@@ -32,7 +32,7 @@ export const register = async (email, username, password) => {
     if (response.ok) {
         return result;
     } else {
-        throw result.message;
+        throw "Invalid email, username or password";
     }
 };
 
