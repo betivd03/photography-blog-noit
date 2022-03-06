@@ -1,4 +1,5 @@
-const baseUrl = "http://localhost:5000/users";
+// const baseUrl = "http://localhost:5000/users";
+const baseUrl = "https://git.heroku.com/photography-blog-noit-server.git";
 
 export const login = async (email, password) => {
     let response = await fetch(`${baseUrl}/login`, {
