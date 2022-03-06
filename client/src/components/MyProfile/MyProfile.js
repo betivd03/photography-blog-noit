@@ -38,7 +38,9 @@ const MyProfile = () => {
                     </div>
                 )
                 : (
-                    <p>No Photos Yet!</p>
+                    <div className="no-photos">
+                        <p>No Photos Yet!</p>
+                    </div>
                 )
             }
             

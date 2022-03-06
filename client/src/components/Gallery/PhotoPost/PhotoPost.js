@@ -8,10 +8,10 @@ const PhotoPost = ({
     return (
         <div className="post">
             <h3>{post.title}</h3>
-            <Link to={`/details/${post._id}`}>Details</Link>
-            <div className="photo">
+            <div className="image">
                 <img src={post.imageUrl} alt={post.title} />
             </div>
+            <Link to={`/details/${post._id}`} className="button-details">Details</Link>
         </div>
     );
 };

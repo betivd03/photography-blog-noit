@@ -19,17 +19,27 @@ div.user-info {
 
 div.user-info p {
     font-size: 50px;
+    color: white;
 }
 
 div.my-photos {
     margin: 10px 30px;
-    padding: auto 50px;
-    min-width: 600px;
+    padding: 30px;
+    min-width: 300px;
     max-width: 1500px;
-    display: flex;
-    flex-wrap: wrap
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    align-items: stretch;
 }
 
 div.info {
     display: flex;
+}
+
+div.no-photos p {
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    font-style: italic;
 }
