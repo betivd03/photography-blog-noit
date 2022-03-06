@@ -35,41 +35,34 @@ const AddPhoto = () => {
         let { title, category, description, location } = Object.fromEntries(formData);
 
         if (title === '' || category === '' || description === '' || location === '') {
-            return setError('All fields are required!');
+            setError('All fields are required!');
+            return;
         } else if (title.length < 3) {
-            return setError('Title must be at least 3 characters long!');
+            setError('Title must be at least 3 characters long!');
+            return;
         } else if (category.length < 3) {
-            return setError('Category must be at least 3 characters long!');
+            setError('Category must be at least 3 characters long!');
+            return;
         } else if (description.length < 3) {
-            return setError('Description must be at least 3 characters long!');
+            setError('Description must be at least 3 characters long!');
+            return;
         } else if (location.length < 3) {
-            return setError('Location must be at least 3 characters long!');
+            setError('Location must be at least 3 characters long!');
+            return;
         }
 
-        formData.append("file", image);
-        formData.append("upload_preset", "photography-blog");
-        formData.append("cloud_name", "betimb");
-
-        fetch("https://api.cloudinary.com/v1_1/betimb/image/upload", {
-            method: "PUT",
-            body: formData
-        })
-        .then(res => res.json())
-        .then(data => {
-            photosService.edit({
-                title,
-                category,
-                description,
-                location,
-                imageUrl: data.url
-            }, photoId, user.accessToken)
-                .then(() => {
-                    navigate(`/details/${photoId}`);
-                });
-        })
-        .catch(err => {
-            navigate('/error');
-        });
+        photosService.edit({
+            title,
+            category,
+            description,
+            location
+        }, photoId, user.accessToken)
+            .then(() => {
+                navigate(`/details/${photoId}`);
+            })
+            .catch(err => {
+                navigate('/error');
+            });
     };
 
     return (
