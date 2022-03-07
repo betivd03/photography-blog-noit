@@ -1,5 +1,5 @@
 // const baseUrl = "http://localhost:5000/photos";
-const baseUrl = "https://git.heroku.com/photography-blog-noit-server.git";
+const baseUrl = "https://photography-blog-noit-server.herokuapp.com/photos";
 
 export const getAll = async () => {
     let response = await fetch(`${baseUrl}/all`);
