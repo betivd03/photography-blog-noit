@@ -23,17 +23,23 @@ const Register = () => {
         let { email, username, password, rePassword } = Object.fromEntries(formData);
 
         if (email === '' || username === '' || password === '' || rePassword === '') {
-            return setError('All fields are required!');
+            setError('All fields are required!');
+            return;
         } else if (password !== rePassword) {
-            return setError('Passwords must match!');
+            setError('Passwords must match!');
+            return;
         } else if (email.length < 5) {
-            return setError('Email must be at least 5 characters long!');
+            setError('Email must be at least 5 characters long!');
+            return;
         } else if (username.length < 5) {
-            return setError('Username must be at least 5 characters long!');
+            setError('Username must be at least 5 characters long!');
+            return;
         } else if (password.length < 5) {
-            return setError('Password must be at least 5 characters long!');
+            setError('Password must be at least 5 characters long!');
+            return;
         } else if (rePassword.length < 5) {
-            return setError('Repeat password must be at least 5 characters long!');
+            setError('Repeat password must be at least 5 characters long!');
+            return;
         } 
 
         authService.register(email, username, password)

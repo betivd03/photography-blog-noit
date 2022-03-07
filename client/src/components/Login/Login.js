@@ -23,12 +23,15 @@ const Login = () => {
         let { email, password } = Object.fromEntries(formData);
         
         if (email === '' || password === '') {
-            return setError('All fields are required!');
+            setError('All fields are required!');
+            return;
         } else if (email.length < 5) {
-            return setError('Email must be at least 5 characters long!');
+            setError('Email must be at least 5 characters long!');
+            return;
         } else if (password.length < 5) {
-            return setError('Password must be at least 5 characters long!');
-        } 
+            setError('Password must be at least 5 characters long!');
+            return;
+        }
 
         authService.login(email, password)
             .then(res => {
