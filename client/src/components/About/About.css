@@ -1,29 +1,20 @@
 div.aboutBlog,
 div.aboutUs {
-    margin-top: 150px;
-    margin-left: 10px;
-    height: 82%;
-    width: 50%;
-    position: fixed;
     z-index: 1;
-    top: 0;
-    overflow-x: hidden;
+    min-width: 300px;
+    margin: 100px auto;
 }
 
-div.aboutBlog {
-    left: 0;
-}
-
-div.aboutUs {
-    right: 0;
+#about-page {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
 }
 
 .centerInfo {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     text-align: center;
+    margin: auto;
 }
 
 .centerInfo img {
