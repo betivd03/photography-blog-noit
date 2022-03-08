@@ -1,8 +1,3 @@
-/* html {
-    font-family: 'Lato', sans-serif;
-    background-color: #2A4455;
-} */
-
 .app-main {
     font-family: 'Lato', sans-serif;
     background-color: #3EA9B1;
@@ -16,14 +11,11 @@
 }
 
 footer {
-    left: 0;
-    bottom: 0;
     width: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+    background: linear-gradient(rgba(62, 169, 177, 0.5), rgba(0, 0, 0, 0.5));
     color: white;
     text-align: center;
     font-size: 30.5px;
-    position: fixed;
 }
 
 .label-style {
