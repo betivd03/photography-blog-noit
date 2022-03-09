@@ -2,6 +2,7 @@
     font-family: 'Lato', sans-serif;
     background-color: #3EA9B1;
     flex-grow: 1;
+    position: relative;
 }
 
 .layout {
@@ -24,8 +25,9 @@ footer {
 }
 
 .error-div {
-    position: fixed;
+    position: absolute;
     right: 10px;
+    top: 10px;
     display: block;
     text-align: center;
     font-style: italic;
