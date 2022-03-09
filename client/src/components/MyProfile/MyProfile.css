@@ -11,6 +11,7 @@ div.profile-photo img {
     width: 200px;
     height: 200px;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 div.user-info {
@@ -23,14 +24,15 @@ div.user-info p {
 }
 
 div.my-photos {
-    margin: 10px 30px;
+    margin: 10px auto;
     padding: 30px;
     min-width: 300px;
     max-width: 1500px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 16px;
     align-items: stretch;
+    box-sizing: border-box;
 }
 
 div.info {
@@ -42,4 +44,28 @@ div.no-photos p {
     text-align: center;
     font-size: 50px;
     font-style: italic;
+}
+
+@media screen and (max-width: 1800px) {
+    div.my-photos {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    div.my-photos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    div.my-photos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 750px) {
+    div.my-photos {
+        grid-template-columns: 1fr;
+    }
 }

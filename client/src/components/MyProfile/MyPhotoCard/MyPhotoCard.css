@@ -1,7 +1,7 @@
 div.my-photo-card {
     background-color: rgba(255, 255, 255, 0.322);
     padding: 20px;
-    margin: auto 20px;
+    /* margin: auto 20px; */
     width: 100%;
     height: 100%;
     min-width: 300px;
@@ -11,6 +11,7 @@ div.my-photo-card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-sizing: border-box;
 }
 
 div.my-photo-card .image {

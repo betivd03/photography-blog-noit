@@ -1,12 +1,13 @@
 div.posts {
-    margin: 10px 30px;
+    margin: 10px auto;
     padding: 30px;
     min-width: 300px;
     max-width: 1500px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 16px;
     align-items: stretch;
+    box-sizing: border-box;
 }
 
 div.no-photos p {
@@ -14,4 +15,28 @@ div.no-photos p {
     text-align: center;
     font-size: 50px;
     font-style: italic;
+}
+
+@media screen and (max-width: 1800px) {
+    div.posts {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    div.posts {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    div.posts {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 750px) {
+    div.posts {
+        grid-template-columns: 1fr;
+    }
 }
