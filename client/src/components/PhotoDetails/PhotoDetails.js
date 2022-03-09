@@ -43,7 +43,7 @@ const PhotoDetails = () => {
 
         photosService.del(photoId, user.accessToken)
             .then(() => {
-                navigate('/');
+                navigate('/my-profile');
             });
     };
 
