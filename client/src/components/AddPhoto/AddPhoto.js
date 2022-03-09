@@ -26,14 +26,14 @@ const AddPhoto = () => {
         if (title === '' || category === '' || description === '' || location === '') {
             setError('All fields are required!');
             return;
-        } else if (title.length < 3) {
-            setError('Title must be at least 3 characters long!');
+        } else if (title.length < 6) {
+            setError('Title must be at least 6 characters long!');
             return;
-        } else if (category.length < 3) {
-            setError('Category must be at least 3 characters long!');
+        } else if (category.length < 6) {
+            setError('Category must be at least 6 characters long!');
             return;
-        } else if (description.length < 3) {
-            setError('Description must be at least 3 characters long!');
+        } else if (description.length < 10) {
+            setError('Description must be at least 10 characters long!');
             return;
         } else if (location.length < 3) {
             setError('Location must be at least 3 characters long!');
@@ -58,7 +58,7 @@ const AddPhoto = () => {
                 imageUrl: data.url
             }, user.token, user._id)
                 .then(() => {
-                    navigate('/');
+                    navigate('/my-profile');
                 });
         })
         .catch(err => {
