@@ -92,7 +92,7 @@ const PhotoDetails = () => {
                         
                         <div className="likes">
                             {likes > 0 
-                                ? <span>Liked by: {likers}</span>
+                                ? <span>Liked by: {likers.split(', ').length}</span>
                                 : <span>No one like this picture!</span>
                             }
                         </div>
