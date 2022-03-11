@@ -27,7 +27,7 @@ const Gallery = () => {
                 )
                 : (
                     <div className="no-photos">
-                        <p>No Photos Yet!</p>
+                        <p>Loading...</p>
                     </div>
                 )
             }
